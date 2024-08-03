@@ -12,6 +12,13 @@
                     @if($project->type)
                         <p><strong>Type:</strong> {{ $project->type->name }}</p>
                     @endif
+                    @if($project->technologies->isNotEmpty())
+                        <p><strong>Technologies:</strong>
+                            @foreach($project->technologies as $technology)
+                                <span class="badge bg-secondary">{{ $technology->name }}</span>
+                            @endforeach
+                        </p>
+                    @endif
                 </div>
             </div>
         </div>
